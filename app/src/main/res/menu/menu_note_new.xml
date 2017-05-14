@@ -22,5 +22,13 @@
         app:showAsAction="always"
         />
 
+    <item
+        android:enabled="true"
+        android:title="save"
+        android:id="@+id/action_menu_camera"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:orderInCategory="0"
+        app:showAsAction="always"
+        />
 
 </menu>
