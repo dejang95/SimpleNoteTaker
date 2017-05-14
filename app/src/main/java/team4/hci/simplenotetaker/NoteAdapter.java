@@ -38,8 +38,8 @@ public class NoteAdapter extends ArrayAdapter<Note>{
             title.setText(note.getTitle());
             date.setText(note.getFormattedDate(getContext()));
 
-            if(note.getContent().length() > 50) {
-                content.setText(note.getContent().substring(0,50));
+            if(note.getContent().length() > 0) {
+                content.setText(note.getContent().substring(0,0));
             } else content.setText(note.getContent());
         }
 

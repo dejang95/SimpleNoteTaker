@@ -32,8 +32,6 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         titleView = (EditText) findViewById(R.id.note_Title);
         contentView = (EditText) findViewById(R.id.note_Content);
         imageView = (ImageView) findViewById(R.id.note_Image);
@@ -48,6 +46,17 @@ public class NoteActivity extends AppCompatActivity {
             }
         }
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+    }
+
+
+    //for back icon
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
     // Inflating the menu from resources - Adding a new Item
