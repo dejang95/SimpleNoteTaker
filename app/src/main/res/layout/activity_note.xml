@@ -17,6 +17,13 @@
         android:id="@+id/note_Content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="top"/>
+        android:gravity="top"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/note_Image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
 
 </LinearLayout>
