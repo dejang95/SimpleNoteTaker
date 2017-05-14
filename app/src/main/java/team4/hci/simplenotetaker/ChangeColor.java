@@ -15,6 +15,7 @@ import android.widget.Button;
 public class ChangeColor extends AppCompatActivity {
 
     Button pink;
+    Button orange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,27 +24,64 @@ public class ChangeColor extends AppCompatActivity {
 
 
         pink = (Button)findViewById(R.id.button_pink);
+        orange = (Button)findViewById(R.id.button_orange);
 
 
-    pink.setOnClickListener(new View.OnClickListener(){
+
+        pink.setOnClickListener(new View.OnClickListener(){
     public void onClick(View view){
-        getSupportActionBar().setTitle("Pink");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPink)));
-        if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.LOLLIPOP){
-            Window window =getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
 
-        }
+
+        int color = R.color.colorPink;
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+
+        SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putInt ("colorValue", color);
+
+        editor.apply ();
     }
 
 
 
 });
 
+
+        orange.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+
+
+                int color = R.color.colorOrange;
+
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+
+                SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = preferences.edit();
+
+                editor.putInt ("colorValue", color);
+
+                editor.apply ();
+            }
+
+
+
+        });
+
+        SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
+        int color = preferences.getInt ("colorValue", 0);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
     }
+
+
+
 
 
     //for back icon
@@ -52,6 +90,7 @@ public class ChangeColor extends AppCompatActivity {
         finish();
         return true;
     }
+
 
 
 }

@@ -9,7 +9,9 @@
     <ListView
         android:id="@+id/main_notesListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"></ListView>
 
 </LinearLayout>
+
+
