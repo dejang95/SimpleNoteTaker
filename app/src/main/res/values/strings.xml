@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleNoteTaker</string>
+    <string name="title_activity_change_color">ChangeColor</string>
 </resources>
