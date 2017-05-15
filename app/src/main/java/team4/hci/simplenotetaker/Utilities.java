@@ -42,6 +42,7 @@ public class Utilities {
         return true;
     }
 
+
     public static ArrayList<Note> getSavedNotes(Context context) {
         ArrayList<Note> notes = new ArrayList<Note>();
 
