@@ -1,6 +1,7 @@
 package team4.hci.simplenotetaker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -12,10 +13,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import static team4.hci.simplenotetaker.R.color.colorPink;
+
 public class ChangeColor extends AppCompatActivity {
 
     Button pink;
     Button orange;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +34,12 @@ public class ChangeColor extends AppCompatActivity {
 
 
 
+
         pink.setOnClickListener(new View.OnClickListener(){
     public void onClick(View view){
 
 
-        int color = R.color.colorPink;
+        int color = colorPink;
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
@@ -43,6 +50,14 @@ public class ChangeColor extends AppCompatActivity {
         editor.putInt ("colorValue", color);
 
         editor.apply ();
+
+
+
+        Intent i=new Intent(getApplicationContext(),MainActivity.class);
+        i.putExtra("color", color);
+        startActivity(i);
+
+
     }
 
 
@@ -76,6 +91,7 @@ public class ChangeColor extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
     }
