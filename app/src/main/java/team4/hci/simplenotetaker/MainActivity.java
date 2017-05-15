@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         mListViewNotes = (ListView) findViewById(R.id.main_notesListView);
     }
 
@@ -43,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent newNoteActivity = new Intent(this, NoteActivity.class);
                 startActivity(newNoteActivity);
                 break;
+
+            case R.id.action_menu_calendar:
+                Intent showcalendar = new Intent(this, Calendar.class);
+                startActivity(showcalendar);
+                break;
+
         }
 
         return true;

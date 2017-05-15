@@ -32,7 +32,8 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         titleView = (EditText) findViewById(R.id.note_Title);
         contentView = (EditText) findViewById(R.id.note_Content);
@@ -58,6 +59,8 @@ public class NoteActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     // Clicking on the button will call save Note
 
     @Override
@@ -80,8 +83,13 @@ public class NoteActivity extends AppCompatActivity {
             case R.id.action_menu_camera:
                 dispatchTakePictureIntent();
                 break;
+            case android.R.id.home:
+                this.finish();
+                break;
+
 
         }
+
 
         return true;
     }
