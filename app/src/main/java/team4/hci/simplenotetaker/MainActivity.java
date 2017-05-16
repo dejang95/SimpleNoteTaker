@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -49,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_menu_calendar:
                 Intent showcalendar = new Intent(this, Calendar.class);
                 startActivity(showcalendar);
+                break;
+            case R.id.settings:
+                Intent showsettings = new Intent(this, Settings.class);
+                startActivity(showsettings);
                 break;
 
         }
