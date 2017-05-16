@@ -16,9 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NoteActivity" />
-        <activity android:name=".ChangeColor" />
-        <activity android:name=".Settings"></activity>
+
+        <activity android:name=".Calendar"
+            android:label="Calendar"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".NoteActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 
 </manifest>

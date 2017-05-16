@@ -22,16 +22,6 @@
         app:showAsAction="always"
         />
 
-
-    <item
-        android:enabled="true"
-        android:title="save"
-        android:id="@+id/action_menu_day_night"
-        android:icon="@android:drawable/ic_menu_my_calendar"
-        android:orderInCategory="0"
-        app:showAsAction="always"
-        />
-
     <item
         android:id="@+id/settings"
         android:title="Settings" />
@@ -49,7 +39,6 @@
         android:id="@+id/change_color"
         android:title="Change color"
         />
-
 
 
 </menu>

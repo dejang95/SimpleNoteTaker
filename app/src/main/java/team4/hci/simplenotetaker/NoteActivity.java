@@ -32,6 +32,9 @@ public class NoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note);
 
 
+
+
+
         titleView = (EditText) findViewById(R.id.note_Title);
         contentView = (EditText) findViewById(R.id.note_Content);
         imageView = (ImageView) findViewById(R.id.note_Image);
@@ -46,17 +49,6 @@ public class NoteActivity extends AppCompatActivity {
             }
         }
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-    }
-
-
-    //for back icon
-    @Override
-    public boolean onSupportNavigateUp(){
-        finish();
-        return true;
     }
 
     // Inflating the menu from resources - Adding a new Item
@@ -66,6 +58,8 @@ public class NoteActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_note_new, menu);
         return true;
     }
+
+
 
     // Clicking on the button will call save Note
 
@@ -89,8 +83,13 @@ public class NoteActivity extends AppCompatActivity {
             case R.id.action_menu_camera:
                 dispatchTakePictureIntent();
                 break;
+            case android.R.id.home:
+                this.finish();
+                break;
+
 
         }
+
 
         return true;
     }
