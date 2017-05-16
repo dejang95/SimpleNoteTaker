@@ -1,12 +1,14 @@
 package team4.hci.simplenotetaker;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,24 +17,31 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ListView mListViewNotes;
+    Button pink;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Referencing the ListView in the "activity_main.xml"
+
+
         mListViewNotes = (ListView) findViewById(R.id.main_notesListView);
     }
 
     // Inflating the menu from resources - Adding a new Item
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
     // Clicking on the button will call Note Activity
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -42,17 +51,47 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity);
                 break;
 
-            case R.id.action_menu_calendar:
-                Intent showcalendar = new Intent(this, Calendar.class);
-                startActivity(showcalendar);
+            case R.id.change_color:
+                // start NoteActivity
+                Intent newNoteActivity2 = new Intent(this, ChangeColor2.class);
+                startActivity(newNoteActivity2);
                 break;
 
+            case R.id.settings:
+                // start NoteActivity
+                Intent newNoteActivity3 = new Intent(this, Settings2.class);
+                startActivity(newNoteActivity3);
+                break;
+
+            case R.id.Map:
+                // start NoteActivity
+                Intent newNoteActivity4 = new Intent(this, MapsActivity.class);
+                startActivity(newNoteActivity4);
+                break;
+
+            case R.id.action_menu_eye:
+                Intent newNoteActivity5 = new Intent(this, ActivityMode.class);
+                startActivity(newNoteActivity5);
+                break;
+
+            case R.id.calender:
+                Intent newNoteActivity6 = new Intent(this, Calendar.class);
+                startActivity(newNoteActivity6);
+                break;
+
+            //start Color
+
         }
+
+
+
 
         return true;
     }
 
-    // Filling the ListView with all the saved notes.
+
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -80,4 +119,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+
+
 }
