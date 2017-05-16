@@ -132,6 +132,8 @@ public class NoteActivity extends AppCompatActivity {
         if (loadedNote == null) {
             note = new Note(System.currentTimeMillis(), titleView.getText().toString(),
                     contentView.getText().toString());
+
+
         } else {
             note = new Note(loadedNote.getDateTime(), titleView.getText().toString()
                     , contentView.getText().toString());
