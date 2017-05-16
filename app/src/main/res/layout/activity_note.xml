@@ -15,7 +15,6 @@
         android:padding="5dp"
         android:hint="Title"
         android:background="@drawable/rounded_edittext"/>
-
     <EditText
         android:id="@+id/note_Content"
         android:layout_width="match_parent"
