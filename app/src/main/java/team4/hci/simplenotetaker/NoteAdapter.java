@@ -21,7 +21,6 @@ public class NoteAdapter extends ArrayAdapter<Note>{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //return super.getView(position, convertView, parent);
 
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_note, null);

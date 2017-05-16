@@ -14,14 +14,12 @@
         app:showAsAction="always"
         />
 
-
-
     <item
         android:id="@+id/settings"
         android:title="Settings" />
 
     <item
-        android:id="@+id/calendar"
+        android:id="@+id/calender"
         android:title="Calendar" />
 
     <item

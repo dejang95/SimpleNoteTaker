@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="team4.hci.simplenotetaker">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,25 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Calendar"
-            android:label="Calendar"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".NoteActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Settings2" />
-        <activity android:name=".MapsActivity"
-            />
-
-        <activity android:name=".ChangeColor2">
-
-            android:parentActivityName=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".ActivityMode"
-            android:label="@string/title_activity_mode"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCqcDJfaiw2vXyLe5pZP6cYzdK1Wv7LYIM"/>
     </application>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
 </manifest>

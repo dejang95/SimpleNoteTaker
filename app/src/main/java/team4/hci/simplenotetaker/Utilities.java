@@ -25,8 +25,7 @@ public class Utilities {
         FileOutputStream fileOutputStream;
         ObjectOutputStream objectOutputStream;
 
-        //Write file to the storage
-
+        //Write file (Single Entry) to the storage
         try {
             fileOutputStream = context.openFileOutput(fileName, context.MODE_PRIVATE);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -42,7 +41,7 @@ public class Utilities {
         return true;
     }
 
-
+    // For getting all the saved notes and putting them back in the ListView
     public static ArrayList<Note> getSavedNotes(Context context) {
         ArrayList<Note> notes = new ArrayList<Note>();
 
@@ -74,6 +73,7 @@ public class Utilities {
         return notes;
     }
 
+    // Getting the single Note by it's name
     public static Note getNoteByName(Context context, String fileName) {
         Note note;
         File file = new File(context.getFilesDir(), fileName);
@@ -101,6 +101,7 @@ public class Utilities {
         return null;
     }
 
+    // Deleting a single Note
     public static void deleteNote(Context context, String fileName) {
         File dir = context.getFilesDir();
         File file = new File(dir, fileName);
