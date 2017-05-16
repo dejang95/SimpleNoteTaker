@@ -27,10 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent i= getIntent();
-
-        getIntent().getStringExtra("color");
-
 
 
         mListViewNotes = (ListView) findViewById(R.id.main_notesListView);
@@ -42,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        Intent i= getIntent();
-
-        getIntent().getStringExtra("color");
         return true;
     }
 

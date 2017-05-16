@@ -54,9 +54,9 @@ public class ChangeColor extends AppCompatActivity {
         editor.apply();
 
 
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+       /** Intent i = new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("color", colorPink);
-        startActivity(i);
+        startActivity(i);*/
 
 
     }
@@ -93,9 +93,6 @@ public class ChangeColor extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
 
 
     }
