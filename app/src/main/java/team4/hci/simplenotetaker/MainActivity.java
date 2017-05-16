@@ -1,10 +1,9 @@
 package team4.hci.simplenotetaker;
 
-import android.app.usage.UsageEvents;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,8 +11,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.github.sundeepk.compactcalendarview.domain.Event;
 
 import java.util.ArrayList;
 
@@ -30,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         mListViewNotes = (ListView) findViewById(R.id.main_notesListView);
-
     }
 
     // Inflating the menu from resources - Adding a new Item
@@ -72,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity4);
                 break;
 
-            case R.id.calendar:
-                Intent showcalendar2 = new Intent(this, Calendar.class);
-                startActivity(showcalendar2);
+            case R.id.action_menu_eye:
+                Intent newNoteActivity5 = new Intent(this, ActivityMode.class);
+                startActivity(newNoteActivity5);
                 break;
 
             //start Color

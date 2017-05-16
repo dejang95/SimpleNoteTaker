@@ -27,11 +27,19 @@
         <activity
             android:name=".NoteActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Settings2"
-            android:parentActivityName=".MainActivity"
+        <activity android:name=".Settings2" />
+        <activity android:name=".MapsActivity"
             />
-        <activity android:name=".ChangeColor2"
-            android:parentActivityName=".MainActivity"></activity>
+
+        <activity android:name=".ChangeColor2">
+
+            android:parentActivityName=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityMode"
+            android:label="@string/title_activity_mode"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCqcDJfaiw2vXyLe5pZP6cYzdK1Wv7LYIM"/>
     </application>
 
 </manifest>
