@@ -35,6 +35,7 @@
             android:name=".ActivityMode"
             android:label="@string/title_activity_mode"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCqcDJfaiw2vXyLe5pZP6cYzdK1Wv7LYIM"/>
     </application>
 
 </manifest>
