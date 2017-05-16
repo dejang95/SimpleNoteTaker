@@ -15,8 +15,6 @@ public class Settings2 extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public boolean onSupportNavigateUp(){
         finish();

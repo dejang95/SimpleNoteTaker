@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * Created by dejan on 13.05.2017.
+ * Created by Dejan on 13.05.2017.
  */
 
 public class Note implements Serializable{

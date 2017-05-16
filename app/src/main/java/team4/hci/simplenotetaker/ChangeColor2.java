@@ -57,6 +57,7 @@ public class ChangeColor2 extends AppCompatActivity {
         orange.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
 
+
                 int color = R.color.colorOrange;
 
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
