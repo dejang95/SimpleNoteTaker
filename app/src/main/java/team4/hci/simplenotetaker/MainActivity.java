@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,10 +18,18 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     private ListView mListViewNotes;
     Button pink;
+
+    static {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i= getIntent();
 
         getIntent().getStringExtra("color");
+
+
 
 
 
@@ -73,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             //start Color
+
 
         }
 
