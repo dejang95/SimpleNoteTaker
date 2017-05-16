@@ -19,6 +19,9 @@
         <activity
             android:name=".NoteActivity"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Calendar"
+            android:parentActivityName=".MainActivity" />
     </application>
 
     <uses-feature
