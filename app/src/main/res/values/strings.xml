@@ -2,4 +2,5 @@
     <string name="app_name">SimpleNoteTaker</string>
     <string name="title_activity_change_color">ChangeColor</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_mode">ActivityMode</string>
 </resources>

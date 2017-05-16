@@ -31,8 +31,10 @@
         <activity android:name=".ChangeColor2">
             android:parentActivityName=".MainActivity" />
         </activity>
-        <activity android:name=".Settings3" />
-        <activity android:name=".ChangeColor3"></activity>
+        <activity
+            android:name=".ActivityMode"
+            android:label="@string/title_activity_mode"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

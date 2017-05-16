@@ -3,6 +3,7 @@ package team4.hci.simplenotetaker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mListViewNotes;
     Button pink;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity4);
                 break;
 
+            case R.id.action_menu_eye:
+                Intent newNoteActivity5 = new Intent(this, ActivityMode.class);
+                startActivity(newNoteActivity5);
+                break;
+
             //start Color
 
         }
@@ -107,4 +114,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+
+
 }
