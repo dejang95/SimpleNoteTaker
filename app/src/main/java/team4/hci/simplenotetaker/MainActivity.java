@@ -21,13 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        // Referencing the ListView in the "activity_main.xml"
         mListViewNotes = (ListView) findViewById(R.id.main_notesListView);
     }
 
     // Inflating the menu from resources - Adding a new Item
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -35,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Clicking on the button will call Note Activity
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -56,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // Filling the ListView with all the saved notes.
     @Override
     protected void onResume() {
         super.onResume();

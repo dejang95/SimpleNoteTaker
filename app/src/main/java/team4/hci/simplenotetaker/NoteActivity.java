@@ -17,7 +17,6 @@ public class NoteActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-
     private EditText titleView;
     private EditText contentView;
 
@@ -31,10 +30,7 @@ public class NoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
 
-
-
-
-
+        //Defining the Views in "acticity_note.xml"
         titleView = (EditText) findViewById(R.id.note_Title);
         contentView = (EditText) findViewById(R.id.note_Content);
         imageView = (ImageView) findViewById(R.id.note_Image);
@@ -52,17 +48,13 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     // Inflating the menu from resources - Adding a new Item
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_note_new, menu);
         return true;
     }
 
-
-
-    // Clicking on the button will call save Note
-
+    // For selecting the Icons and back button in Action Bar.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -76,24 +68,20 @@ public class NoteActivity extends AppCompatActivity {
                 deleteNote();
                 break;
 
-            case R.id.home:
+            case android.R.id.home:
                 finish();
                 return true;
 
             case R.id.action_menu_camera:
                 dispatchTakePictureIntent();
                 break;
-            case android.R.id.home:
-                this.finish();
-                break;
-
 
         }
-
 
         return true;
     }
 
+    // Deleting the single Note.
     private void deleteNote() {
         if (loadedNote == null) {
             Toast.makeText(this, "Save the note first! Right now there is nothing to delete! :/ ", Toast.LENGTH_SHORT).show();
@@ -121,6 +109,7 @@ public class NoteActivity extends AppCompatActivity {
         }
     }
 
+    // For saving the single Note.
     private void saveNote() {
         Note note;
 
@@ -147,14 +136,39 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private void dispatchTakePictureIntent() {
+        // Making the intent for taking the picture.
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        //TODO - Saving the picture on an SDCard, so it can be saved within a single User Entry.
+        //Problems with API levels larger than 22 - the reason why the code is commented out.
+        /*
+         File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+         String pictureName = getPictureName();
+         File imageFile = new File (pictureDirectory, pictureName);
+         Uri pictureUri = Uri.fromFile(imageFile);
+         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
+         */
+
+        // Taking a single picture.
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
+
     }
 
+    //Function that selects the name of the picture based on the time of its creation, and than returns it's name.
+    /*
+     * private String getPictureName() {
+     * SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy_HHmmss");
+     * String timeStamp = sdf.format(new Date());
+     * return "EintragBild" + timeStamp + ".jpg";
+     * }
+     */
+
+    // For displaying the taken picture and storing it temporary inside an ImageView of UserEmpty Activity.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
