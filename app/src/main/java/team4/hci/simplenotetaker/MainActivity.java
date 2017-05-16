@@ -53,27 +53,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity);
                 break;
 
+            case R.id.settings:
+                // start NoteActivity
+                Intent newNoteActivity3 = new Intent(this, Settings2.class);
+                startActivity(newNoteActivity3);
+                break;
+
             case R.id.change_color:
                 // start NoteActivity
-                Intent newNoteActivity2 = new Intent(this, ChangeColor.class);
+                Intent newNoteActivity2 = new Intent(this, ChangeColor2.class);
                 startActivity(newNoteActivity2);
                 break;
 
-            case R.id.settings:
-                // start NoteActivity
-                Intent newNoteActivity3 = new Intent(this, Settings.class);
-                startActivity(newNoteActivity3);
-                break;
-            case R.id.settings:
-                Intent showsettings = new Intent(this, Settings.class);
-                startActivity(showsettings);
-                break;
 
             //start Color
 
         }
-
-
 
 
         return true;
