@@ -4,6 +4,7 @@
 
     <!-- Add a new note! -->
 
+
     <item
         android:enabled="true"
         android:title="create"
@@ -39,6 +40,14 @@
         android:id="@+id/change_color"
         android:title="Change color"
         />
+
+    <item
+        android:id="@+id/action_menu_eye"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_view"
+        android:orderInCategory="0"
+        android:title="save"
+        app:showAsAction="always" />
 
 
 </menu>
