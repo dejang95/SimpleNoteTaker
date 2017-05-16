@@ -74,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity5);
                 break;
 
+            case R.id.calender:
+                Intent newNoteActivity6 = new Intent(this, Calendar.class);
+                startActivity(newNoteActivity6);
+                break;
+
             //start Color
 
         }
