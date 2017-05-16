@@ -66,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent newNoteActivity4 = new Intent(this, MapsActivity.class);
                 startActivity(newNoteActivity4);
                 break;
+            case R.id.action_menu_calendar:
+                Intent showcalendar = new Intent(this, Calendar.class);
+                startActivity(showcalendar);
+                break;
+            case R.id.calendar:
+                Intent showcalendar2 = new Intent(this, Calendar.class);
+                startActivity(showcalendar2);
+                break;
 
             //start Color
 

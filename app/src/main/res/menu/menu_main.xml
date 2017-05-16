@@ -27,7 +27,7 @@
         android:title="Settings" />
 
     <item
-        android:id="@+id/calender"
+        android:id="@+id/calendar"
         android:title="Calendar" />
 
     <item
