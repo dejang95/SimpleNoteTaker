@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import static team4.hci.simplenotetaker.R.color.colorPink;
+import static team4.hci.simplenotetaker.R.id.button_pink;
 
 public class ChangeColor extends AppCompatActivity {
 
@@ -29,38 +31,35 @@ public class ChangeColor extends AppCompatActivity {
         setContentView(R.layout.activity_change_color);
 
 
-        pink = (Button)findViewById(R.id.button_pink);
+        pink = (Button)findViewById(button_pink);
         orange = (Button)findViewById(R.id.button_orange);
 
 
 
 
         pink.setOnClickListener(new View.OnClickListener(){
-    public void onClick(View view){
+    public void onClick(View view) {
 
 
         int color = colorPink;
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
-        SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("prefKey", MODE_PRIVATE);
 
         SharedPreferences.Editor editor = preferences.edit();
 
-        editor.putInt ("colorValue", color);
+        editor.putInt("colorValue", color);
 
-        editor.apply ();
+        editor.apply();
 
 
-
-        Intent i=new Intent(getApplicationContext(),MainActivity.class);
-        i.putExtra("color", color);
-        startActivity(i);
+       /** Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.putExtra("color", colorPink);
+        startActivity(i);*/
 
 
     }
-
-
 
 });
 
@@ -69,7 +68,8 @@ public class ChangeColor extends AppCompatActivity {
             public void onClick(View view){
 
 
-                int color = R.color.colorOrange;
+
+                    int color = R.color.colorOrange;
 
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
@@ -80,6 +80,8 @@ public class ChangeColor extends AppCompatActivity {
                 editor.putInt ("colorValue", color);
 
                 editor.apply ();
+
+
             }
 
 
@@ -91,7 +93,6 @@ public class ChangeColor extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
 
     }

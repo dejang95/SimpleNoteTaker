@@ -1,12 +1,17 @@
 package team4.hci.simplenotetaker;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ListView mListViewNotes;
+    Button pink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +53,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newNoteActivity);
                 break;
 
-            case R.id.action_menu_calendar:
-                Intent showcalendar = new Intent(this, Calendar.class);
-                startActivity(showcalendar);
+            case R.id.change_color:
+                // start NoteActivity
+                Intent newNoteActivity2 = new Intent(this, ChangeColor.class);
+                startActivity(newNoteActivity2);
+                break;
+
+            case R.id.settings:
+                // start NoteActivity
+                Intent newNoteActivity3 = new Intent(this, Settings.class);
+                startActivity(newNoteActivity3);
                 break;
             case R.id.settings:
                 Intent showsettings = new Intent(this, Settings.class);
                 startActivity(showsettings);
                 break;
 
+            //start Color
+
         }
+
+
+
 
         return true;
     }
+
+
+
 
     @Override
     protected void onResume() {
