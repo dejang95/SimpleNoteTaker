@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.Button;
 
+// This class is for the user so he can choose between the Day/Night/Auto Mode
+
 public class ActivityMode extends AppCompatActivity {
     private Button btnAutoMode,btnNightMode,btnDayMode;
     @Override
@@ -23,7 +25,7 @@ public class ActivityMode extends AppCompatActivity {
         btnAutoMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Set Auto Mode
+                // Set Auto Mode - In 22:00 the App will automatically change itselft to Night Mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
                 Intent i=new Intent(ActivityMode.this,MainActivity.class);
                 startActivity(i);

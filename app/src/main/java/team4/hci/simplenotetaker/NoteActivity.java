@@ -1,10 +1,14 @@
 package team4.hci.simplenotetaker;
 
+/* created by Dejan */
+
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -13,17 +17,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class NoteActivity extends AppCompatActivity {
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_TAKE_PHOTO = 1;
 
     private EditText titleView;
     private EditText contentView;
-
     private ImageView imageView;
 
     private String noteFileName;
+    private String currentPhotoPath;
     private Note loadedNote;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +52,7 @@ public class NoteActivity extends AppCompatActivity {
             if (loadedNote != null) {
                 titleView.setText(loadedNote.getTitle());
                 contentView.setText(loadedNote.getContent());
+
             }
         }
 
@@ -90,13 +101,13 @@ public class NoteActivity extends AppCompatActivity {
 
             AlertDialog.Builder dialog = new AlertDialog.Builder(this)
                     .setTitle("Delete Dialog")
-                    .setMessage("You are about to delete " + titleView.getText().toString() + ", sure?")
+                    .setMessage("You are about to delete the following note: ''" + titleView.getText().toString() + "''. Are you sure?")
                     .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Utilities.deleteNote(getApplicationContext(), loadedNote.getDateTime() + Utilities.FILE_EXTENSION);
                             Toast.makeText(getApplicationContext()
-                                    , titleView.getText().toString() + " Note was deleted.", Toast.LENGTH_SHORT).show();
+                                    , titleView.getText().toString() + " The Note has been deleted.", Toast.LENGTH_SHORT).show();
                             finish();
                         }
 
@@ -114,7 +125,7 @@ public class NoteActivity extends AppCompatActivity {
         Note note;
 
         if (titleView.getText().toString().trim().isEmpty() || contentView.getText().toString().trim().isEmpty()) {
-            Toast.makeText(this, "Please enter something in your title or your content :) ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter something in your note first, than save it! :) ", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -135,25 +146,41 @@ public class NoteActivity extends AppCompatActivity {
         finish();
     }
 
+
+    // Creates Image File from taken photo
+    private File createImageFile () throws IOException {
+
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(imageFileName, ".jpg", storageDir);
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    //Takes the photo and saves it on storage
     private void dispatchTakePictureIntent() {
-        // Making the intent for taking the picture.
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        //TODO - Saving the picture on an SDCard, so it can be saved within a single User Entry.
-        //Problems with API levels larger than 22 - the reason why the code is commented out.
-        /*
-         File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-         String pictureName = getPictureName();
-         File imageFile = new File (pictureDirectory, pictureName);
-         Uri pictureUri = Uri.fromFile(imageFile);
-         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
-         */
-
-        // Taking a single picture.
+        // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
+            // Create The File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                //Error occurred
 
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this, "com.example.android.fileprovider", photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
     }
 
     //Function that selects the name of the picture based on the time of its creation, and than returns it's name.
@@ -169,10 +196,10 @@ public class NoteActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            //Bitmap imageBitmap = (Bitmap) extras.get("data");
+            //imageView.setImageBitmap(imageBitmap);
         }
     }
 }

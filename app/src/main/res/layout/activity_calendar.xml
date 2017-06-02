@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="team4.hci.simplenotetaker.Calendar">
 
 
-    <DatePicker
-        android:id="@+id/datePicker2"
+    <CalendarView
+        android:id="@+id/calendar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:headerBackground="@android:color/black"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-</RelativeLayout>
+        android:layout_height="match_parent">
+    </CalendarView>
+</LinearLayout>
