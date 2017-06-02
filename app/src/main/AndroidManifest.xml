@@ -22,6 +22,17 @@
         <activity
             android:name=".Calendar"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Settings2"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MapsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCqcDJfaiw2vXyLe5pZP6cYzdK1Wv7LYIM" />
+
+        <activity android:name=".ChangeColor2" />
+        <activity android:name=".ActivityMode" />
     </application>
 
     <uses-feature

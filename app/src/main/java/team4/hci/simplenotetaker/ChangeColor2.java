@@ -15,9 +15,6 @@ public class ChangeColor2 extends AppCompatActivity {
     Button pink;
     Button orange;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +56,6 @@ public class ChangeColor2 extends AppCompatActivity {
 
         orange.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-
 
 
                 int color = R.color.colorOrange;
