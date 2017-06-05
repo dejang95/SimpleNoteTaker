@@ -10,7 +10,7 @@
         android:id="@+id/buttonDay"
         android:layout_width="272dp"
         android:layout_height="49dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_blue_dark"
         android:text="Auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
