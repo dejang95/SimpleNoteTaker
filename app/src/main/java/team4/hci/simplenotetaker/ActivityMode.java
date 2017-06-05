@@ -1,16 +1,11 @@
 package team4.hci.simplenotetaker;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.text.Selection;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 // This class is for the user so he can choose between the Day/Night/Auto Mode
 
@@ -25,7 +20,7 @@ public class ActivityMode extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
         btnAutoMode= (Button) findViewById(R.id.buttonAuto);
         btnNightMode= (Button) findViewById(R.id.buttonNight);
-        btnDayMode= (Button) findViewById(R.id.buttonAuto);
+        btnDayMode= (Button) findViewById(R.id.buttonDay);
 
 
         btnAutoMode.setOnClickListener(new View.OnClickListener() {
