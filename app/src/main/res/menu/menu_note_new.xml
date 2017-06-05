@@ -5,30 +5,27 @@
     <!-- Add a new note! -->
 
     <item
-        android:enabled="true"
-        android:title="save"
         android:id="@+id/action_menu_saveNote"
-        android:icon="@android:drawable/ic_menu_save"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_save"
         android:orderInCategory="0"
-        app:showAsAction="always"
-        />
+        android:title="save"
+        app:showAsAction="always" />
 
     <item
-        android:enabled="true"
-        android:title="save"
         android:id="@+id/action_menu_delete"
-        android:icon="@android:drawable/ic_menu_delete"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_delete_forever"
         android:orderInCategory="0"
-        app:showAsAction="always"
-        />
+        android:title="save"
+        app:showAsAction="always" />
 
     <item
-        android:enabled="true"
-        android:title="save"
         android:id="@+id/action_menu_camera"
-        android:icon="@android:drawable/ic_menu_camera"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_camera_alt"
         android:orderInCategory="0"
-        app:showAsAction="always"
-        />
+        android:title="save"
+        app:showAsAction="always" />
 
 </menu>

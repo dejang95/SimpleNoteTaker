@@ -6,13 +6,12 @@
 
 
     <item
-        android:enabled="true"
-        android:title="create"
         android:id="@+id/action_menu_newNote"
-        android:icon="@android:drawable/ic_menu_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_add"
         android:orderInCategory="0"
-        app:showAsAction="always"
-        />
+        android:title="create"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/settings"
@@ -35,7 +34,7 @@
     <item
         android:id="@+id/action_menu_eye"
         android:enabled="true"
-        android:icon="@android:drawable/ic_menu_view"
+        android:icon="@drawable/ic_action_brightness_4"
         android:orderInCategory="0"
         android:title="save"
         app:showAsAction="always" />

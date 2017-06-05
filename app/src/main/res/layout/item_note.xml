@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="22.02.2012"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/holo_blue_bright" />
+        android:textColor="@color/colorPink" />
 
     <TextView
         android:id="@+id/list_note_content"

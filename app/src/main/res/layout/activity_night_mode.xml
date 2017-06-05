@@ -7,10 +7,10 @@
     tools:context="team4.hci.simplenotetaker.ActivityMode">
 
     <Button
-        android:id="@+id/buttonDay"
+        android:id="@+id/buttonAuto"
         android:layout_width="272dp"
         android:layout_height="49dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_orange_light"
         android:text="Auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="49dp"
         android:background="@color/common_google_signin_btn_text_light_default"
         android:text="Night"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDay"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAuto"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAuto" />
