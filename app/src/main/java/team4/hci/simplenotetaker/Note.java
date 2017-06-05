@@ -11,13 +11,13 @@ import java.util.TimeZone;
  * Created by Dejan on 13.05.2017.
  */
 
-public class Note implements Serializable{
+public class Note implements Serializable {
 
     private long mDateTime;
     private String mTitle;
     private String mContent;
 
-    public Note(long dateTime, String title, String content){
+    public Note(long dateTime, String title, String content) {
         mContent = content;
         mTitle = title;
         mDateTime = dateTime;
@@ -25,34 +25,32 @@ public class Note implements Serializable{
 
     // Functions for setting the Data
 
-    public void setDateTime (long dateTime) {
+    public void setDateTime(long dateTime) {
         mDateTime = dateTime;
     }
-
-    public void setTitle (String title) {
+    public void setTitle(String title) {
         mTitle = title;
     }
-
-    public void setContent (String content) {
+    public void setContent(String content) {
         mContent = content;
     }
+
+
     // Functions for getting the Data
 
-    public long getDateTime () {
+    public long getDateTime() {
         return mDateTime;
     }
-
-    public String getTitle () {
+    public String getTitle() {
         return mTitle;
     }
-
-    public String getContent () {
+    public String getContent() {
         return mContent;
     }
 
     // Getting the formatted Date in "dd/MM/yyyy HH:mm:ss"
 
-    public String getFormattedDate (Context context) {
+    public String getFormattedDate(Context context) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss",
                 context.getResources().getConfiguration().locale);
 

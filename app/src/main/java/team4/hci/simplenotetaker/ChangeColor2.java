@@ -10,6 +10,9 @@ import android.widget.Button;
 import static team4.hci.simplenotetaker.R.color.colorPink;
 import static team4.hci.simplenotetaker.R.id.button_pink;
 
+// This class should enable the user to change color, however it wasn't implemented very well yet
+// which is why it crashes when it is activated.
+
 public class ChangeColor2 extends AppCompatActivity {
 
     Button pink;
@@ -21,13 +24,11 @@ public class ChangeColor2 extends AppCompatActivity {
         setContentView(R.layout.activity_change_color2);
 
 
-        pink = (Button)findViewById(button_pink);
-        orange = (Button)findViewById(R.id.button_orange);
+        pink = (Button) findViewById(button_pink);
+        orange = (Button) findViewById(R.id.button_orange);
 
 
-
-
-        pink.setOnClickListener(new View.OnClickListener(){
+        pink.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
 
@@ -54,31 +55,30 @@ public class ChangeColor2 extends AppCompatActivity {
         });
 
 
-        orange.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        orange.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
 
 
                 int color = R.color.colorOrange;
 
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
-                SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
+                SharedPreferences preferences = getSharedPreferences("prefKey", MODE_PRIVATE);
 
                 SharedPreferences.Editor editor = preferences.edit();
 
-                editor.putInt ("colorValue", color);
+                editor.putInt("colorValue", color);
 
-                editor.apply ();
+                editor.apply();
 
 
             }
 
 
-
         });
 
-        SharedPreferences preferences = getSharedPreferences ("prefKey", MODE_PRIVATE);
-        int color = preferences.getInt ("colorValue", 0);
+        SharedPreferences preferences = getSharedPreferences("prefKey", MODE_PRIVATE);
+        int color = preferences.getInt("colorValue", 0);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -87,16 +87,12 @@ public class ChangeColor2 extends AppCompatActivity {
     }
 
 
-
-
-
     //for back icon
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
-
 
 
 }
